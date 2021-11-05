@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner Input  = new Scanner(System.in);
+        System.out.println("Enter number:");
+        int a = Input.nextInt();
+        System.out.println(digital_root(a));
+    }
+    
+    public static int digital_root(int arg){
+        int sum = 0;
+        int current, previous;
+        previous = arg;
+        int step = 0;
+        
+        do{
+            current = previous/10;
+            current*=10;
+            sum += (previous - current);
+            previous = current/10;
+            step++;
+        }while(current != 0);
+        
+        if(step != 1){
+            return digital_root(sum);
+        }else{
+            return sum;
+        }
+}
