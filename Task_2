@@ -1,0 +1,28 @@
+class Main {
+    public static void main(String[] args) {
+    System.out.println(first_non_repeating_letter("stress"));
+    System.out.println(first_non_repeating_letter("sTreSS"));
+    System.out.println(first_non_repeating_letter("Ssaa"));
+    }
+    
+    public static char first_non_repeating_letter( String arg){
+        char[] char_array = new char[arg.length()];
+        char[] lowercase_char_array = new char[arg.length()];
+        char_array = arg.toCharArray();
+        lowercase_char_array = arg.toLowerCase().toCharArray();
+        for(int i = 0;i< lowercase_char_array.length;i++){
+            boolean is_unique = true;
+            for( int j = 0; j < lowercase_char_array.length;j++){
+                if(lowercase_char_array[i] == lowercase_char_array[j] & i!=j){
+                    is_unique = false;
+                    break;
+                }
+            }
+            
+            if(is_unique){
+                return char_array[i];
+            }
+        }
+        return ' ';
+    }
+}
