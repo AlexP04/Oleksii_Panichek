@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class Main {
+public class Test {
 
     public static void main(String args[]){
 
